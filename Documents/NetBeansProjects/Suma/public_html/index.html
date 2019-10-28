@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+
+        <script>
+            //un conjunto de elementos que comparte un nombre
+            //todo arreglo tiene un indice
+            //normalmente los indices parten desde cero
+            //CamelCase arregloNumeroPrimos
+            //Snake ej: arreglo_numero_primos
+            //unidimensional
+            var arreglo = [1, 6, 7, 8, 9, 8, 463, 7, 11, 3, 4, 9, 33, 19, 17, 18] //tiene 5 elementos. El indice iría desde el cero hasta el cuatro
+            var arreglo_n_primos = []
+            console.log(arreglo)
+            console.log(arreglo.length)
+            console.log(arreglo[18])
+            console.log(arreglo)
+            for (var indice = 0; indice < arreglo.length; indice++) {
+                console.log("elemento: " + arreglo[indice] + " indice: " + indice)
+            }
+            //del la variable arreglo extraer en un nuevo arreglo los números primos
+            //es divisible por el mismo y por la unidad y el residuo debe ser cero
+            //eje: 8 8%1= el residuo es cero 8%2=0 8%3=2 8%4=0
+            //eje: 3 3%1=0 3%2=1 3%3=0
+            //resp: 1, 7, 7, 11, 3, 19, 17
+            //parte de la solución
+            for (var indice = 0; indice < arreglo.length; indice++) {
+                var numero = arreglo[indice]
+                var acum = 0;
+                for (var divisor = 1; divisor <= numero; divisor++) {
+                    //console.log(numero % divisor)
+                    if (numero % divisor == 0) {
+                        acum++
+                    }
+                }
+                if (acum <= 2 && acum > 0) {
+                    console.log("El numero: " + numero + "es primo")
+                    arreglo_n_primos.push(numero)
+                }
+            }
+            //imprimir el arreglo de números primos
+            console.log(arreglo_n_primos)
+            var arregloBidimensional = [
+                [2, 44, 65, 56],
+                [11, 24, 65, 1],
+                [81, 94, 50, 0],
+                [1, 4, 0, 10]
+            ]
+            for (var indice = 0; indice < arregloBidimensional.length; indice++) {
+                var numero = arregloBidimensional[indice];
+                for (var divisor = 3; divisor <= Math.sqrt(numero); divisor++) {
+                    if (numero % divisor == 0)
+                        console.log("El numero: " + numero + "es primo")
+                    arregloBidimensional.push(numero)
+                }
+
+                console.log("Los números primos son: " + arregloBidimensional)
+                }
+                //filas 1: 167
+            //columnas 1: 95 2:166
+            //diagonal ascendente: 216 y descendente
+
+
+        </script>
+
+    </body>
+</html>
